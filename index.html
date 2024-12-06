@@ -6,7 +6,7 @@
     <title>WaffleCoin</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        /* Base Styles */
+        /* General Styles */
         body {
             font-family: 'Poppins', sans-serif;
             margin: 0;
@@ -15,73 +15,84 @@
             color: #333;
         }
 
-        header {
+        nav {
             background-color: #ffde59;
+            padding: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #6c3e26;
+            font-weight: 700;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        header {
+            background-color: #ffe599;
             text-align: center;
             padding: 50px 20px;
-            position: relative;
-        }
-
-        header h1 {
-            font-size: 3.5em;
-            color: #6c3e26;
-            margin: 0;
-        }
-
-        header p {
-            font-size: 1.5em;
-            color: #6c3e26;
         }
 
         header img {
-            position: absolute;
-            top: 20px;
-            left: 20px;
-            width: 100px;
+            max-width: 150px;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin: 20px 0;
+            color: #6c3e26;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #444;
         }
 
         .buy-button {
             background-color: #e86d1f;
             color: white;
-            font-size: 1.2em;
             padding: 15px 30px;
+            font-size: 1.2em;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            margin-top: 20px;
-            transition: background 0.3s ease;
+            transition: transform 0.3s;
         }
 
         .buy-button:hover {
-            background-color: #c05919;
+            transform: scale(1.1);
         }
 
-        main {
+        section {
+            padding: 50px 20px;
             text-align: center;
-            padding: 40px 20px;
         }
 
-        .section {
-            margin-bottom: 50px;
-        }
-
-        .section h2 {
+        section h2 {
             font-size: 2.5em;
             color: #6c3e26;
-            margin-bottom: 20px;
         }
 
-        .section p {
-            font-size: 1.2em;
-            margin: 0 auto;
+        section p {
             max-width: 800px;
+            margin: 20px auto;
+            font-size: 1.2em;
             color: #444;
         }
 
         .icon-section {
             display: flex;
             justify-content: center;
-            gap: 20px;
+            gap: 30px;
             margin-top: 30px;
         }
 
@@ -103,8 +114,8 @@
         footer {
             background-color: #6c3e26;
             color: white;
-            text-align: center;
             padding: 20px;
+            text-align: center;
         }
 
         footer a {
@@ -115,54 +126,74 @@
         footer a:hover {
             text-decoration: underline;
         }
+
+        @media (max-width: 768px) {
+            .icon-section {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
     </style>
 </head>
 <body>
+    <nav>
+        <a href="#about">Sobre</a>
+        <a href="#tokenomics">Tokenomics</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#buy">Comprar</a>
+    </nav>
+
     <header>
-        <img src="wafflecoin-logo" alt="wafflecoin-logo">
+        <img src="logo.png" alt="WaffleCoin Logo">
         <h1>WaffleCoin</h1>
-        <p>The Sweetest and Crunchiest Coin in Blockchain</p>
-        <button class="buy-button" onclick="window.location.href='#buy';">Buy Now</button>
+        <p>A criptomoeda mais doce e crocante do blockchain!</p>
+        <button class="buy-button" onclick="window.location.href='#buy';">Comprar Agora</button>
     </header>
 
-    <main>
-        <section id="about" class="section">
-            <h2>About WaffleCoin</h2>
-            <p>WaffleCoin is a fun cryptocurrency inspired by the eternal love of waffles. With its community-focused approach, we aim to make blockchain sweet and accessible to everyone.</p>
-        </section>
+    <section id="about">
+        <h2>Sobre a WaffleCoin</h2>
+        <p>Inspirada no amor eterno pelos waffles, a WaffleCoin une diversão e tecnologia. Com uma comunidade forte e um plano sólido, nosso objetivo é tornar o blockchain mais acessível (e delicioso) para todos.</p>
+    </section>
 
-        <section id="tokenomics" class="section">
-            <h2>Tokenomics</h2>
-            <p>Total Supply: 1,000,000,000 $WAFFLE</p>
-            <div class="icon-section">
-                <div class="icon">
-                    <img src="wafflecoin-logo" alt="Community Icon">
-                    <p>40% Community</p>
-                </div>
-                <div class="icon">
-                    <img src="wafflecoin-logo" alt="Liquidity Icon">
-                    <p>30% Liquidity</p>
-                </div>
-                <div class="icon">
-                    <img src="wafflecoin-logo" alt="Development Icon">
-                    <p>20% Development</p>
-                </div>
-                <div class="icon">
-                    <img src="wafflecoin-logo" alt="Marketing Icon">
-                    <p>10% Marketing</p>
-                </div>
+    <section id="tokenomics">
+        <h2>Tokenomics</h2>
+        <p>Detalhes sobre a distribuição do token $WAFFLE:</p>
+        <div class="icon-section">
+            <div class="icon">
+                <img src="waffle-icon.png" alt="Community">
+                <p>40% Comunidade</p>
             </div>
-        </section>
+            <div class="icon">
+                <img src="waffle-icon.png" alt="Liquidity">
+                <p>30% Liquidez</p>
+            </div>
+            <div class="icon">
+                <img src="waffle-icon.png" alt="Development">
+                <p>20% Desenvolvimento</p>
+            </div>
+            <div class="icon">
+                <img src="waffle-icon.png" alt="Marketing">
+                <p>10% Marketing</p>
+            </div>
+        </div>
+    </section>
 
-        <section id="roadmap" class="section">
-            <h2>Roadmap</h2>
-            <p>1. Token Launch 🚀 | 2. Community Airdrop 🎁 | 3. Partnerships 🤝 | 4. Expansion 🚀</p>
-        </section>
-    </main>
+    <section id="roadmap">
+        <h2>Roadmap</h2>
+        <p>Confira nossos passos para o futuro:</p>
+        <p>1. Lançamento 🚀 | 2. Airdrop 🎁 | 3. Parcerias 🤝 | 4. Expansão 🌍</p>
+    </section>
+
+    <section id="buy">
+        <h2>Como Comprar</h2>
+        <p>Conecte sua carteira, adquira $WAFFLE e faça parte da nossa comunidade!</p>
+        <button class="buy-button" onclick="alert('Conexão com MetaMask em breve!')">Conectar Carteira</button>
+    </section>
 
     <footer>
-        <p>© 2024 WaffleCoin. Built with ❤️ by the Waffle Team.</p>
-        <p>Follow us on <a href="https://twitter.com" target="_blank">Twitter</a> | <a href="https://discord.com" target="_blank">Discord</a></p>
+        <p>© 2024 WaffleCoin. Feito com ❤️ pela equipe Waffle.</p>
+        <p>Nos siga em <a href="https://twitter.com" target="_blank">Twitter</a> | <a href="https://discord.com" target="_blank">Discord</a> | <a href="mailto:contact@wafflecoin.com">Email</a></p>
     </footer>
 </body>
 </html>
+
